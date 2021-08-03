@@ -1,19 +1,22 @@
 package ar.edu.unlam;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
-import ar.edu.unlam.example.Auto;
 
-public class Paciente implements Comparator<Paciente> {
+public class Paciente implements Comparable<Paciente> {
 
 	private String nombre;
 	private String apellido;
 	private Integer dni;
+	private List<Vacuna> vacunas;
 	
 	public Paciente(String nombre, String apellido, Integer dni) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
+		this.vacunas = new ArrayList<Vacuna>();
 	}
 
 	public String getNombre() {
@@ -26,6 +29,14 @@ public class Paciente implements Comparator<Paciente> {
 
 	public Integer getDni() {
 		return dni;
+	}
+	
+	public void recibirVacuna(Vacuna vacuna) {
+		vacunas.add(vacuna);
+	}
+	
+	public List<Vacuna> getVacunas() {
+		return this.vacunas;
 	}
 
 	@Override
@@ -53,12 +64,15 @@ public class Paciente implements Comparator<Paciente> {
 		return true;
 	}
 
+
+
+
 	@Override
-	public int compare(Paciente p1, Paciente p2) {
-		if (p1.getDni().compareTo(p2.getDni()) != 0) {
-			return p1.getDni().compareTo(p2.getDni());
+	public int compareTo(Paciente p) {
+		if (this.getDni().compareTo(p.getDni()) != 0) {
+			return this.getDni().compareTo(p.getDni());
 		}
-		return p1.getNombre().compareTo(p2.getNombre());
+		return this.getNombre().compareTo(p.getNombre());
 	}
 
 

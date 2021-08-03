@@ -1,5 +1,8 @@
 package ar.edu.unlam;
 
-public class NoMoreVaccineException {
-
+public class NoMoreVaccineException extends Exception {
+	
+	public NoMoreVaccineException(String mensaje) {
+		super(mensaje);
+	}
 }
