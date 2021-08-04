@@ -75,8 +75,8 @@ public class FinalTest {
 		centro.vacunarPacienteHepatitis(nuevo1, hepatitis1);
 		centro.vacunarPacienteHepatitis(nuevo2, hepatitis2);
 		centro.vacunarPacienteHepatitis(nuevo3, hepatitis3);
-		assertEquals(nuevo2,(((TreeSet) centro.getPacientesVacunados()).first()));
-		assertEquals(nuevo3,(((TreeSet) centro.getPacientesVacunados()).last()));
+		assertEquals(nuevo3,(((TreeSet) centro.getPacientesVacunados()).first()));
+		assertEquals(nuevo2,(((TreeSet) centro.getPacientesVacunados()).last()));
 	}
 	
 	

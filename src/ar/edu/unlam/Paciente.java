@@ -91,10 +91,10 @@ public class Paciente implements Comparable<Paciente> {
 
 	@Override
 	public int compareTo(Paciente p) {
-		if (this.getDni().compareTo(p.getDni()) != 0) {
-			return this.getDni().compareTo(p.getDni());
+		if (p.getDni().compareTo(this.getDni()) != 0) {
+			return p.getDni().compareTo(this.getDni());
 		}
-		return this.getNombre().compareTo(p.getNombre());
+		return p.getNombre().compareTo(this.getNombre());
 	}
 
 
