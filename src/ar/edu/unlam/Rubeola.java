@@ -2,16 +2,23 @@ package ar.edu.unlam;
 
 public class Rubeola extends Vacuna {
 
-	private Integer id;
+	private final Integer id = 6;
 	
-	public Rubeola( Integer id) {
+	public Rubeola() {
 		
-		this.id = 6;
+	
 	}
 
 	
 	public Integer getId() {
 		return id;
+	}
+
+
+	@Override
+	public int compareTo(Vacuna o) {
+		return this.id.compareTo(o.getId());
+	
 	}
 	
 	

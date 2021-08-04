@@ -15,14 +15,27 @@ public class FinalTest {
 	}
 	
 	@Test (expected = NoCovidVaccineException.class)
-	public void queSeConsidereVacunadoContraElCovidSoloCuandoTengaLasDosDosis() {
+	public void queSeConsidereVacunadoContraElCovidSoloCuandoTengaLasDosDosis() throws NoCovidVaccineException {
 		CentroVacunarte centro = new CentroVacunarte("Centro de Vacunacion");
 		Paciente nuevo = new Paciente("Jorge", "Gonzalez",33333);
 		Vacuna covid1 = new Covid19PrimerDosis();
-		Vacuna covid2 = new Covid19SegundaDosis();
-		
-		centro.vacunarPaciente(nuevo, covid2);
+		Vacuna covid2 = new Covid19SegundaDosis();		
+		centro.vacunarPacienteCovid(nuevo, covid2);		
+	}
+	
+	@Test
+	public void queUnPacienteNoSePuedaVacunarConMasDeDosVacunasDistintas() throws NoCovidVaccineException {
+		CentroVacunarte centro = new CentroVacunarte("Centro de Vacunacion");
+		Paciente nuevo = new Paciente("Jorge", "Gonzalez",33333);
+		Vacuna covid1 = new Covid19PrimerDosis();
+		Vacuna covid2 = new Covid19SegundaDosis();	
+		Vacuna rubeola = new Rubeola();
+		centro.vacunarPacienteCovid(nuevo, covid1);	
+		centro.vacunarPacienteCovid(nuevo, covid2);	
+		centro.vacunarPacienteCovid(nuevo, rubeola);	
 		
 	}
+	
+	
 
 }

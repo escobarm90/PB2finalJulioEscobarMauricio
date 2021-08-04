@@ -2,15 +2,21 @@ package ar.edu.unlam;
 
 public class HepatitisA extends Vacuna{
 
-	private Integer id;
+	private final Integer id = 3;
 	
-	public HepatitisA( Integer id) {
+	public HepatitisA() {
 		
-		this.id = 3;
+		
 	}
 	
 	public Integer getId() {
 		return id;
+	}
+	
+	@Override
+	public int compareTo(Vacuna o) {
+		return this.id.compareTo(o.getId());
+	
 	}
 
 }

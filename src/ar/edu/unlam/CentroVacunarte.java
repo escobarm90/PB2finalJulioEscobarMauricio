@@ -16,7 +16,7 @@ public class CentroVacunarte {
 	}
 	
 	public void vacunarPacienteCovid(Paciente paciente, Vacuna vacuna) throws NoCovidVaccineException {
-		if(paciente.getVacunas().contains(vacuna.getId().equals("primera"))) {
+		if(vacuna.getId()==2 && !pacientesSinVacunar.contains(paciente)) {
 			throw new NoCovidVaccineException("Falta la primer dosis");
 		}else if(paciente.getVacunas().size()<=2) {			
 				paciente.recibirVacuna(vacuna);
@@ -29,11 +29,11 @@ public class CentroVacunarte {
 	
 	
 	
-	public Boolean vacunarPaciente(Paciente paciente, Vacuna vacuna) {
+	public void vacunarPaciente(Paciente paciente, Vacuna vacuna) throws NoMoreVaccineException {
 		if(paciente.getVacunas().size()<=2) {			
 			paciente.recibirVacuna(vacuna);
 			pacientesVacunados.add(paciente);
 					
-		}return true;
+		}else throw new NoMoreVaccineException("NO puede darse mas vacunas");
 	}
 }

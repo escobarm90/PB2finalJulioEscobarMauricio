@@ -1,12 +1,14 @@
 package ar.edu.unlam;
 
-public abstract class Vacuna {
+public abstract class Vacuna implements Comparable<Vacuna> {
 
 	
 	
-	public Vacuna() {
-		
+	private Integer id;
+
+	public Vacuna() {		
 	}
 
 	public abstract Integer getId();
 }
+

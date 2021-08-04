@@ -2,7 +2,7 @@ package ar.edu.unlam;
 
 public class Covid19PrimerDosis extends Vacuna{
 
-	private Integer id = 1;
+	private final Integer id = 1;
 	
 	public Covid19PrimerDosis() {		
 	
@@ -10,6 +10,12 @@ public class Covid19PrimerDosis extends Vacuna{
 
 	public Integer getId() {
 		return this.id;
+	}
+
+	@Override
+	public int compareTo(Vacuna o) {
+		return this.id.compareTo(o.getId());
+	
 	}
 	
 	

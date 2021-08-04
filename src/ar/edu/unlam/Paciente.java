@@ -11,6 +11,8 @@ public class Paciente implements Comparable<Paciente> {
 	private String apellido;
 	private Integer dni;
 	private List<Vacuna> vacunas;
+	private Boolean tuvoRubeola;
+	private Boolean tuvoHepatitis;
 	
 	public Paciente(String nombre, String apellido, Integer dni) {
 		this.nombre = nombre;
@@ -31,7 +33,7 @@ public class Paciente implements Comparable<Paciente> {
 		return dni;
 	}
 	
-	public void recibirVacuna(Vacuna vacuna) {
+	public void recibirVacuna(Vacuna vacuna) {		
 		vacunas.add(vacuna);
 	}
 	
