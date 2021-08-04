@@ -20,6 +20,14 @@ public class Paciente implements Comparable<Paciente> {
 		this.dni = dni;
 		this.vacunas = new ArrayList<Vacuna>();
 	}
+	
+	public void darRubeola() {
+		this.tuvoRubeola = true;
+	}
+	
+	public void darHepatitis() {
+		this.tuvoHepatitis = true;
+	}
 
 	public String getNombre() {
 		return nombre;
