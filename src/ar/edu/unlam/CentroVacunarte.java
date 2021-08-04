@@ -25,19 +25,21 @@ public class CentroVacunarte {
 			}
 		}		
 		
-	
+	public Set<Paciente> getPacientesVacunados(){
+		return this.pacientesVacunados;
+	}
 	
 	
 	
 	public void vacunarPacienteHepatitis(Paciente paciente, Vacuna vacuna) throws TuvoHepatitisException {
-		if(paciente.getVacunas().size()<=2 && paciente.tuvoHepatitis() == false) {			
+		if(paciente.getVacunas().size()<=2 && paciente.tuvoHepatitis().equals(false)) {			
 			paciente.recibirVacuna(vacuna);
 			pacientesVacunados.add(paciente);					
 		}else throw new TuvoHepatitisException("TUVO HEPATITIS");
 	}
 	
 	public void vacunarPacienteRubeola(Paciente paciente, Vacuna vacuna) throws TuvoRubeolaException {
-		if(paciente.getVacunas().size()<=2 && paciente.tuvoRubeola() == false) {			
+		if(paciente.getVacunas().size()<=2 && paciente.tuvoRubeola().equals(false)) {			
 			paciente.recibirVacuna(vacuna);
 			pacientesVacunados.add(paciente);					
 		}else throw new TuvoRubeolaException("TUVO Rubeola");

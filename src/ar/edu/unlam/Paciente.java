@@ -50,13 +50,13 @@ public class Paciente implements Comparable<Paciente> {
 	}
 	
 	public Boolean tuvoRubeola() {
-		if (this.tuvoRubeola = true) {
+		if (this.tuvoRubeola == true) {
 			tuvoRubeola = true;	
 		}return tuvoRubeola;
 	}
 	
 	public Boolean tuvoHepatitis() {
-		if (this.tuvoHepatitis = true) {
+		if (this.tuvoHepatitis == true) {
 			tuvoHepatitis = true;	
 		}return tuvoHepatitis;
 	}
