@@ -36,6 +36,24 @@ public class FinalTest {
 		
 	}
 	
+	@Test (expected = TuvoHepatitisException.class)
+	public void queUnPacienteQueTuvoHepatitisNoSePuedaDarLaVacuna() throws TuvoRubeolaException {
+		CentroVacunarte centro = new CentroVacunarte("Centro de Vacunacion");
+		Paciente nuevo = new Paciente("Jorge", "Gonzalez",33333);		
+		Vacuna rubeola = new Rubeola();
+		centro.vacunarPacienteRubeola(nuevo, rubeola);	
+		
+	}
+	
+	@Test (expected = TuvoRubeolaException.class)
+	public void queUnPacienteQueTuvoRubeolaNoSePuedaDarLaVacuna() throws TuvoRubeolaException {
+		CentroVacunarte centro = new CentroVacunarte("Centro de Vacunacion");
+		Paciente nuevo = new Paciente("Jorge", "Gonzalez",33333);		
+		Vacuna rubeola = new Rubeola();
+		centro.vacunarPacienteRubeola(nuevo, rubeola);	
+		
+	}
+	
 	
 
 }

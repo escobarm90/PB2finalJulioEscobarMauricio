@@ -29,11 +29,21 @@ public class CentroVacunarte {
 	
 	
 	
-	public void vacunarPaciente(Paciente paciente, Vacuna vacuna) throws NoMoreVaccineException {
-		if(paciente.getVacunas().size()<=2) {			
+	public void vacunarPacienteHepatitis(Paciente paciente, Vacuna vacuna) throws TuvoHepatitisException {
+		if(paciente.getVacunas().size()<=2 && paciente.tuvoHepatitis() == false) {			
 			paciente.recibirVacuna(vacuna);
-			pacientesVacunados.add(paciente);
-					
-		}else throw new NoMoreVaccineException("NO puede darse mas vacunas");
+			pacientesVacunados.add(paciente);					
+		}else throw new TuvoHepatitisException("TUVO HEPATITIS");
+	}
+	
+	public void vacunarPacienteRubeola(Paciente paciente, Vacuna vacuna) throws TuvoRubeolaException {
+		if(paciente.getVacunas().size()<=2 && paciente.tuvoRubeola() == false) {			
+			paciente.recibirVacuna(vacuna);
+			pacientesVacunados.add(paciente);					
+		}else throw new TuvoRubeolaException("TUVO Rubeola");
 	}
 }
+	
+
+
+

@@ -11,8 +11,8 @@ public class Paciente implements Comparable<Paciente> {
 	private String apellido;
 	private Integer dni;
 	private List<Vacuna> vacunas;
-	private Boolean tuvoRubeola;
-	private Boolean tuvoHepatitis;
+	private Boolean tuvoRubeola = false;
+	private Boolean tuvoHepatitis = false;
 	
 	public Paciente(String nombre, String apellido, Integer dni) {
 		this.nombre = nombre;
@@ -39,6 +39,18 @@ public class Paciente implements Comparable<Paciente> {
 	
 	public List<Vacuna> getVacunas() {
 		return this.vacunas;
+	}
+	
+	public Boolean tuvoRubeola() {
+		if (this.tuvoRubeola = true) {
+			tuvoRubeola = true;	
+		}return tuvoRubeola;
+	}
+	
+	public Boolean tuvoHepatitis() {
+		if (this.tuvoHepatitis = true) {
+			tuvoHepatitis = true;	
+		}return tuvoHepatitis;
 	}
 
 	@Override
