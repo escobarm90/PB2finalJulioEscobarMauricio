@@ -60,23 +60,24 @@ public class FinalTest {
 	
 	
 	
-//	@Test
-//	public void presentarPacientesOrdenados() throws TuvoHepatitisException {
-//		CentroVacunarte centro = new CentroVacunarte("Centro de Vacunacion");
-//		Paciente nuevo = new Paciente("F", "Gonzalez",33333);
-//		Paciente nuevo1 = new Paciente("A", "Gonzalez",2222);	
-//		Paciente nuevo2 = new Paciente("B", "Gonzalez",1111);	
-//		Paciente nuevo3 = new Paciente("D", "Gonzalez",44444);
-//		Vacuna hepatitis = new HepatitisA();
-//		Vacuna hepatitis1 = new HepatitisA();
-//		Vacuna hepatitis2 = new HepatitisA();
-//		Vacuna hepatitis3 = new HepatitisA();
-//		centro.vacunarPacienteHepatitis(nuevo, hepatitis);	
-//		centro.vacunarPacienteHepatitis(nuevo1, hepatitis1);
-//		centro.vacunarPacienteHepatitis(nuevo2, hepatitis2);
-//		centro.vacunarPacienteHepatitis(nuevo3, hepatitis3);
-//		assertEquals(nuevo1,(((TreeSet) centro.getPacientesVacunados()).first()));
-//	}
+	@Test
+	public void presentarPacientesOrdenados() throws TuvoHepatitisException {
+		CentroVacunarte centro = new CentroVacunarte("Centro de Vacunacion");
+		Paciente nuevo = new Paciente("F", "Gonzalez",33333);
+		Paciente nuevo1 = new Paciente("A", "Gonzalez",2222);	
+		Paciente nuevo2 = new Paciente("B", "Gonzalez",1111);	
+		Paciente nuevo3 = new Paciente("D", "Gonzalez",44444);
+		Vacuna hepatitis = new HepatitisA();
+		Vacuna hepatitis1 = new HepatitisA();
+		Vacuna hepatitis2 = new HepatitisA();
+		Vacuna hepatitis3 = new HepatitisA();
+		centro.vacunarPacienteHepatitis(nuevo, hepatitis);	
+		centro.vacunarPacienteHepatitis(nuevo1, hepatitis1);
+		centro.vacunarPacienteHepatitis(nuevo2, hepatitis2);
+		centro.vacunarPacienteHepatitis(nuevo3, hepatitis3);
+		assertEquals(nuevo2,(((TreeSet) centro.getPacientesVacunados()).first()));
+		assertEquals(nuevo3,(((TreeSet) centro.getPacientesVacunados()).last()));
+	}
 	
 	
 
